@@ -38,6 +38,8 @@ public class Main {
         System.out.print("----------------------------------------------------");
         System.out.printf("\nVALOR TOTAL DE TODOS IMÓVEIS:         R$ %.2f", totalValorImoveis);
         System.out.printf("\nVALOR TOTAL DE TODOS FINANCIAMENTOS:  R$ %.2f\n\n", totalValorFinanciamentos);
+        System.out.printf("\nVALOR TOTAL DE TODOS FINANCIAMENTOS:  R$ %.2f\n\n", totalValorFinanciamentos);
+
 
     }
 }
