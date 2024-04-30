@@ -41,4 +41,28 @@ public class InterfaceUsuario {
         }
         return taxaJurosAnual;
     }
+
+    public double pedirAreaConstruida() {
+        double areaConstruida;
+        System.out.print("Digite a area construida em m²: ");
+        areaConstruida = scanner.nextDouble();
+        while (areaConstruida <= 0) {
+            System.out.print("\nO valor precisa ser positivo.");
+            System.out.print("\nDigite a area construida em m²: ");
+            areaConstruida = scanner.nextDouble();
+        }
+        return areaConstruida;
+    }
+
+    public double pedirAreaTerreno() {
+        double areaTerreno;
+        System.out.print("Digite a area do terreno em m²: ");
+        areaTerreno = scanner.nextDouble();
+        while (areaTerreno <= 0) {
+            System.out.print("\nO valor precisa ser positivo.");
+            System.out.print("\nDigite a area do terreno em m²: ");
+            areaTerreno = scanner.nextDouble();
+        }
+        return areaTerreno;
+    }
 }

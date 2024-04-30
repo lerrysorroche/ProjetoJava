@@ -1,6 +1,6 @@
 package modelo;
 
-public class Financiamento {
+public abstract class Financiamento {
 
     protected double valorImovel;
     protected int prazoFinanciamento;
@@ -24,16 +24,14 @@ public class Financiamento {
         this.taxaJurosAnual = taxaJurosAnual;
     }
 
-    public double calcularPagamentoMensal() {
-        return (this.valorImovel / (this.prazoFinanciamento * 12)) * (1 + (this.taxaJurosAnual / 100 / 12));
-    }
+    public abstract double calcularPagamentoMensal();
 
     public double calcularTotalPagamento() {
-        return this.calcularPagamentoMensal() * this.prazoFinanciamento * 12;
+        return this.calcularPagamentoMensal() * this.getPrazoFinanciamento() * 12;
     }
 
     public void imprimirFinanciamento() {
-        System.out.printf("\nValor do imóvel:          R$ %.2f\n", this.valorImovel);
+        System.out.printf("\nValor do imóvel:          R$ %.2f\n", this.getValorImovel());
         System.out.printf("Pagamento mensal:         R$ %.2f\n", this.calcularPagamentoMensal());
         System.out.printf("Valor do financiamento:   R$ %.2f\n\n", this.calcularTotalPagamento());
     }
