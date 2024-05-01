@@ -11,7 +11,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args){
 
-        int i;
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
         InterfaceUsuario interfaceUsuario = new InterfaceUsuario();
 
@@ -23,19 +22,17 @@ public class Main {
         double areaConstruida;
         double areaTerreno;
 
-        // Loop mantido para caso seja usado no futuro.
-        for (i = 0; i < 1; i++) {
-            System.out.print("\n************ " + (i + 1) + "º FINANCIAMENTO ************");
-            valorImovel = interfaceUsuario.pedirValorImovel();
-            prazoFinanciamento = interfaceUsuario.pedirPrazoFinanciamento();
-            taxaJurosAnual = interfaceUsuario.pedirTaxaJurosAnual();
-            areaConstruida = interfaceUsuario.pedirAreaConstruida();
-            areaTerreno = interfaceUsuario.pedirAreaTerreno();
-            Casa casa1 = new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual, areaConstruida, areaTerreno);
-            listaDeFinanciamentos.add(new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual, areaConstruida, areaTerreno));
-            System.out.print("\n------- RESUMO DO " + (i + 1) + "º FINANCIAMENTO -------");
-            casa1.imprimirFinanciamento();
-        }
+        // Financiamento de 1 casa com informações inseridas pelo usuário.
+        System.out.print("\n************ 1º FINANCIAMENTO ************");
+        valorImovel = interfaceUsuario.pedirValorImovel();
+        prazoFinanciamento = interfaceUsuario.pedirPrazoFinanciamento();
+        taxaJurosAnual = interfaceUsuario.pedirTaxaJurosAnual();
+        areaConstruida = interfaceUsuario.pedirAreaConstruida();
+        areaTerreno = interfaceUsuario.pedirAreaTerreno();
+        Casa casa1 = new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual, areaConstruida, areaTerreno);
+        listaDeFinanciamentos.add(new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual, areaConstruida, areaTerreno));
+        System.out.print("\n------- RESUMO DO 1º FINANCIAMENTO -------");
+        casa1.imprimirFinanciamento();
 
         // Financiamento de 1 casa, 2 apartamentos e 1 terreno informado diretamente.
         Casa casa2 = new Casa(375000, 30, 8, 180, 250);
