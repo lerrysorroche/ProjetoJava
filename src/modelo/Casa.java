@@ -30,9 +30,5 @@ public class Casa extends Financiamento{
         } catch (AcrescimoMaiorDoQueJurosException e) {
             return (this.getValorImovel() / (this.getPrazoFinanciamento() * 12)) * (1 + (this.getTaxaJurosAnual() / 100 / 12)) + valorAcrescimo;
         }
-
-
-        //return (this.getValorImovel() / (this.getPrazoFinanciamento() * 12)) * (1 + (this.getTaxaJurosAnual() / 100 / 12)) + 80;
     }
-
 }
