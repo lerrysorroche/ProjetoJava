@@ -18,4 +18,17 @@ public class Apartamento extends Financiamento{
         return this.getValorImovel() * (jurosMensal * numeroPotencia / (numeroPotencia - 1));
     }
 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n-------- FINANCIAMENTO DE APARTAMENTO --------\n");
+        sb.append("Valor do Imóvel:               R$ ").append(this.getValorImovel()).append("\n");
+        sb.append("Prazo do financimento:         ").append(this.getPrazoFinanciamento()).append(" anos.").append("\n");
+        sb.append("Taxa de juros anual:           ").append(this.getTaxaJurosAnual()).append("% ao ano.").append("\n");
+        sb.append("Número de vagas de garagaem:   ").append(this.numeroVagasGaragem).append("\n");
+        sb.append("Número do andar:               ").append(this.numeroAndar).append("\n");
+        sb.append("Pagamento mensal:              R$ ").append(calcularPagamentoMensal()).append("\n");
+        sb.append("Valor do financiamento:        R$ ").append(calcularTotalPagamento()).append("\n");
+        return sb.toString();
+    }
+
 }

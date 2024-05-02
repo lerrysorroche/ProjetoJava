@@ -31,4 +31,17 @@ public class Casa extends Financiamento{
             return (this.getValorImovel() / (this.getPrazoFinanciamento() * 12)) * (1 + (this.getTaxaJurosAnual() / 100 / 12)) + valorAcrescimo;
         }
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n----------- FINANCIAMENTO DE CASA -----------\n");
+        sb.append("Valor do Imóvel:               R$ ").append(this.getValorImovel()).append("\n");
+        sb.append("Prazo do financimento:         ").append(this.getPrazoFinanciamento()).append(" anos.").append("\n");
+        sb.append("Taxa de juros anual:           ").append(this.getTaxaJurosAnual()).append("% ao ano.").append("\n");
+        sb.append("Área construída:               ").append(this.areaConstruida).append("\n");
+        sb.append("Área do terreno:               ").append(this.areaTerreno).append("\n");
+        sb.append("Pagamento mensal:              R$ ").append(calcularPagamentoMensal()).append("\n");
+        sb.append("Valor do financiamento:        R$ ").append(calcularTotalPagamento()).append("\n");
+        return sb.toString();
+    }
 }
